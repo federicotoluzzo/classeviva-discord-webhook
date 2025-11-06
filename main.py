@@ -1,7 +1,7 @@
 import requests
 import classeviva
 import time
-from time import strftime
+from time import strftime, datetime
 import asyncio
 from discord_webhook import *
 
@@ -24,9 +24,9 @@ with open("config.txt", "a+") as f:
             if save_config.lower() == 'y':
                 f.write(f"{username} {password}\n{webhook_URL}")
 
-utente = classeviva.Utente(username, password)
-
 def updateBacheca():
+    utente = classeviva.Utente(username, password)
+
     utente()
 
     bacheca = asyncio.run(utente.bacheca())
@@ -57,5 +57,10 @@ def updateBacheca():
 
 while True:
     if int(strftime("%M")) % 10 == 7:
-        updateBacheca()
+        try:
+            updateBacheca()
+        except:
+            print(datetime.datetime.now().strftime("%F %h %H:%M:%S"))
+            print("Insanity is doing the exact same thing over and over again and expecting different result.")
+            print()
     time.sleep(10)

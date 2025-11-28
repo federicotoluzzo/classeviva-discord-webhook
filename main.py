@@ -60,7 +60,7 @@ while True:
         try:
             updateBacheca()
         except:
-            print(datetime.datetime.now().strftime("%F %h %H:%M:%S"))
+            print(datetime.now().strftime("%F %h %H:%M:%S"))
             print("Insanity is doing the exact same thing over and over again and expecting different result.")
             print()
     time.sleep(10)

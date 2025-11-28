@@ -1,7 +1,7 @@
 import requests
 import classeviva
 import time
-from time import strftime, datetime
+from asctime import strftime, datetime
 import asyncio
 from discord_webhook import *
 
@@ -56,7 +56,7 @@ def updateBacheca():
             time.sleep(5)
 
 while True:
-    if int(strftime("%M")) % 10 == 0:
+    if int(strftime("%M")) % 1 == 0:
         try:
             updateBacheca()
         except:

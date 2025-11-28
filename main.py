@@ -44,7 +44,7 @@ def updateBacheca():
             embed = DiscordEmbed(comunicazione["cntTitle"].replace("0 - ", ""))
             embed.set_color(0xff0000)
             embed.set_footer(text=comunicazione["cntValidFrom"], icon_url="https://www.secondocomprensivo.edu.it/wp-content/uploads/2022/08/ClasseViva.jpg")
-            webhook.content = "||<@&1434286238470504458>||"
+            webhook.content = "||<@&1444003676556492983>||"
 
             webhook.add_embed(embed)
             webhook.allowed_mentions = {"roles" : ["1434286238470504458"]}
@@ -56,7 +56,7 @@ def updateBacheca():
             time.sleep(5)
 
 while True:
-    if int(strftime("%M")) % 10 == 7:
+    if int(strftime("%M")) % 10 == 0:
         try:
             updateBacheca()
         except:
